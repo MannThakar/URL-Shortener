@@ -1,0 +1,34 @@
+{
+  "links": [
+    {
+      "id": "f470",
+      "link": "https://stackoverflow.com/questions/1484506/random-color-generator",
+      "domain": "stackoverflow",
+      "color": "#a9a3c5"
+    },
+    {
+      "id": "1f82",
+      "link": "https://www.amazon.in/Apple-MacBook-Chip-13-inch-256GB/dp/B08N5W4NNB/ref=sr_1_3?crid=20ZW4D8XC2HOV&dib=eyJ2IjoiMSJ9.CHExN13tCcFNwuIzOI3JSmuk4oj52b375mE8kRMDTodw9O9lPl7qEIJVNeBizigllnq2tM0IBqb_e3JisFN99UzOMBceOXSp4bOAvweLRD4t5Ah6f7u5w_IWCZTsTSOl345ki_gNy6qtRqLlIKVjuJjq-3riUQwn5lqkk0A3P-fuzsL3jIg2MucguKuPbIBQsjgT84_XoGKTuW_sWg-vs-kf0UuLbz7fqpY18XTsRdJV5cRpQ_j0s7wORIMLUYFouB-ndY1LU0eAOui5buZyfu5pwwB4xbBBvD9wT6qm1NM.3g0t35V-UraXqw2J8g4RFgBcUrDo77StsAuo8U2WgTE&dib_tag=se&keywords=macbook+m1&qid=1731312813&s=computers&sprefix=mac%2Ccomputers%2C190&sr=1-3",
+      "domain": "amazon",
+      "color": "#db6b69"
+    },
+    {
+      "id": "8e2b",
+      "link": "https://codesandbox.io/p/sandbox/sidebar-config-q7942?file=%2Fsrc%2Fstyles.css&from-embed",
+      "domain": "codesandbox",
+      "color": "#69ce1a"
+    },
+    {
+      "id": "9862",
+      "link": "https://mail.google.com/mail/u/0/#inbox",
+      "domain": "mail",
+      "color": "#336f34"
+    },
+    {
+      "id": "35ef",
+      "link": "https://github.com/MannThakar?tab=repositories",
+      "domain": "github",
+      "color": "#f259ed"
+    }
+  ]
+}

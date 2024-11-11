@@ -1,9 +1,11 @@
 const Navbar = () => {
   return (
     <>
-      <div className="navbar bg-base-100 border-b-2">
+      <div className="navbar bg-black border-b border-b-white">
         <div className="flex-1">
-          <a className="btn btn-ghost text-xl">ShortIt</a>
+          <a className="btn btn-ghost text-xl text-white kanit-medium">
+            ShortIt
+          </a>
         </div>
         <div className="flex-none">
           <ul className="menu menu-horizontal px-1">

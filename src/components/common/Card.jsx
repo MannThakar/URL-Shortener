@@ -1,17 +1,20 @@
-const Card = ({ unique, setOpenModal, domainName }) => {
-  console.log(setOpenModal);
+const Card = ({ unique, domainName, handleDelete, color }) => {
   return (
-    <div className="card bg-[#31363F] w-96 shadow-xl">
-      <div className="card-body">
-        <h2 className="card-title">{domainName}</h2>
-        <div className="card-actions justify-end">
+    <div className=" bg-[#31363F] w-96 shadow-xl flex h-28 rounded">
+      <div
+        className="color w-1 h-full rounded-l"
+        style={{ backgroundColor: color }}
+      ></div>
+      <div className="p-4 w-full">
+        <div className="flex justify-between w-full items-center mt-2">
+          <h1 className="font-bold text-lg kanit-regular">{domainName}</h1>
           <button
-            className="btn btn-square btn-sm"
-            onClick={() => setOpenModal(true)}
+            className="btn btn-circle btn-sm hover:bg-red-600 hover:border-red-600"
+            onClick={handleDelete}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
+              className="h-3 w-3"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -25,9 +28,17 @@ const Card = ({ unique, setOpenModal, domainName }) => {
             </svg>
           </button>
         </div>
-        <a href={`http://localhost:5173/shorten/` + unique} target="_blank">
-          {`http://localhost:5173/shorten/` + unique}
-        </a>
+        <div className="mt-3">
+          <a
+            href={`http://localhost:5173/shorten/${unique}`}
+            target="_blank"
+            rel="noreferrer"
+          >
+            <h3 className="cursor-pointer text-base">
+              {`http://localhost:5173/shorten/${unique}`}
+            </h3>
+          </a>
+        </div>
       </div>
     </div>
   );
