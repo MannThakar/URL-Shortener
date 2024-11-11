@@ -30,12 +30,12 @@ const Card = ({ unique, domainName, handleDelete, color }) => {
         </div>
         <div className="mt-3">
           <a
-            href={`http://localhost:5173/shorten/${unique}`}
+            href={`https://shortits.netlify.app/shorten/${unique}`}
             target="_blank"
             rel="noreferrer"
           >
             <h3 className="cursor-pointer text-base">
-              {`http://localhost:5173/shorten/${unique}`}
+              {`https://shortits.netlify.app/shorten/${unique}`}
             </h3>
           </a>
         </div>

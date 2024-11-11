@@ -17,15 +17,18 @@ export const getAPI = (tag = "") => {
       return console.log(e);
     });
 };
-
 export const postAPI = (tag = "", reqBody) => {
   return axios
-    .post(BASE_URL + tag, reqBody, {})
+    .post(BASE_URL + tag, reqBody, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
     .then((res) => {
       return res;
     })
     .catch((e) => {
-      return console.log(e);
+      console.log(e);
     });
 };
 
