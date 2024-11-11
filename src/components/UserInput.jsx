@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Sessor from "../assets/Icons/01_Sessor.svg";
-import Link from "../assets/Icons/02_Link.svg";
+import Link from "../assets/Icons/02_link.svg";
 import API from "../services";
 import Card from "./common/Card";
 import Modal from "./common/Modal";
