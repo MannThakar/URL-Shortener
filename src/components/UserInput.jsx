@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Sessor from "../assets/Icons/01_Sessor.svg";
-import Link from "../assets/Icons/02_link.svg";
 import API from "../services";
 import Card from "./common/Card";
 import NoDataFound from "./common/NoDataFound";
@@ -97,7 +96,7 @@ const UserInput = () => {
     <>
       <div className="h-screens w-11/12 mx-auto">
         <h1 className="text-6xl font-bold text-center mt-16 text-white kanit-medium">
-          ShortIt – Small <span className="text-[#CC2B52]">Links</span>, Big
+          LinkyFy – Small <span className="text-[#CC2B52]">Links</span>, Big
           Impact!
         </h1>
         <h2 className="text-base font-bold text-center text-white raleway-regular">
