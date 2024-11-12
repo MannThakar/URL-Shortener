@@ -28,7 +28,7 @@ const Card = ({ unique, domainName, handleDelete, color }) => {
             </svg>
           </button>
         </div>
-        <div className="mt-3">
+        <div className="mt-3 ">
           <a
             href={`https://shortits.netlify.app/shorten/${unique}`}
             target="_blank"
