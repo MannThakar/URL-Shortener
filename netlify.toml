@@ -1,19 +1,4 @@
 [build]
-  # Directory containing the static files to be deployed.
-  publish = "build"
-  # Command to build your site.
   command = "npm run build"
-  # Directory where Netlify should run the build command
-  base = "/"
-
-# Environment variables
-[build.environment]
-  NODE_VERSION = "16"
-  REACT_APP_API_URL = "https://your-api-url.com"
-
-# Redirects
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-  force = true
+  publish="path-to-react-app/build"
+  base = "path-to-react-app"
