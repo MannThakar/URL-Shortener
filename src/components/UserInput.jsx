@@ -34,11 +34,25 @@ const UserInput = () => {
     return websiteURL.match(/:\/\/(?:www\.)?([^/]+)/)[1].split(".")[0];
   };
 
+  const generateId = () => {
+    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    let id = "";
+    const length = Math.floor(Math.random() * 2) + 4; // Randomly chooses 4 or 5
+
+    for (let i = 0; i < length; i++) {
+      const randomIndex = Math.floor(Math.random() * characters.length);
+      id += characters[randomIndex];
+    }
+
+    return id;
+  };
+
   const handleUrl = async () => {
     try {
       //Loading set to true
       setLoading(true);
 
+      const id = generateId();
       //Checking Validation
       const validationResponse = await handleValidation(input);
 
@@ -51,6 +65,7 @@ const UserInput = () => {
       //POST api call for creating link
       if (validationResponse) {
         await API.createLink({
+          id: id,
           link: input,
           domain: extractedDomain,
           color: randomColor,
