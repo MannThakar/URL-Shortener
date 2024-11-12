@@ -1,6 +1,6 @@
 # URL-Shortener
 
-A simple URL shortener application built with React and JSON Server. This app allows users to shorten URLs, store them temporarily in a local database, and retrieve them when needed. It is a great project for reinforcing core React concepts, managing state, and performing CRUD operations with a mock backend.
+A simple URL shortener application built with React and JSON Server. This app allows users to shorten URLs, store them temporarily in a local database, and retrieve them when needed. It is a great project for reinforcing core React concepts and managing state with a mock backend.
 
 ## Installation
 1. **Clone the repository**:
