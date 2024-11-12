@@ -30,7 +30,7 @@ const Card = ({ unique, domainName, handleDelete, color }) => {
         </div>
         <div className="mt-3 ">
           <a
-            href={`http://localhost:5173/shorten/${unique}`}
+            href={`https://linkyfy.netlify.app/shorten/${unique}`}
             target="_blank"
             rel="noreferrer"
           >
