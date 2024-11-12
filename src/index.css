@@ -10,3 +10,27 @@ body {
   height: 100vh;
   width: 100vw;
 }
+
+/* Basic shimmer effect */
+.shimmer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.shimmer-item {
+  width: 100%;
+  height: 50px;
+  background: #ccc;
+  animation: shimmer 1.5s infinite linear;
+  border-radius: 5px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}

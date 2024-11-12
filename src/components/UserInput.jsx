@@ -3,14 +3,17 @@ import Sessor from "../assets/Icons/01_Sessor.svg";
 import Link from "../assets/Icons/02_link.svg";
 import API from "../services";
 import Card from "./common/Card";
+import NoDataFound from "./common/NoDataFound";
 import { loader } from "../utils/helper";
 import { schema } from "../validation";
 
 const UserInput = () => {
   const [input, setInput] = useState("");
-  const [url, setUrl] = useState([]);
+  const [url, setUrl] = useState();
   const [loading, setLoading] = useState(false);
   const [errors, setErrors] = useState([]);
+  const [apiError, setApiError] = useState("");
+  const [responseLoader, setResponseLoader] = useState(true);
 
   const handleValidation = async (input) => {
     try {
@@ -59,17 +62,21 @@ const UserInput = () => {
       setInput("");
       setLoading(false);
     } catch (error) {
-      console.log(error);
+      console.log("this is error", error);
+      setApiError(error.message);
       setLoading(false);
     }
   };
 
   const handleGetUrl = async () => {
     try {
+      setResponseLoader(true);
       const response = await API.getLinks();
+      setResponseLoader(false);
       setUrl(response);
     } catch (error) {
-      console.log(error);
+      setApiError(error.message);
+      setResponseLoader(false);
     }
   };
 
@@ -97,7 +104,6 @@ const UserInput = () => {
           Create short, powerful links that make sharing easy. Track clicks,
           manage links, and connect your audience with the content they love.
         </h2>
-
         <div className="flex gap-4 justify-center mt-10">
           <div className=" w-2/3">
             <label className="input input-bordered flex items-center w-full">
@@ -109,8 +115,6 @@ const UserInput = () => {
                 name="userInputLink"
                 onChange={(e) => setInput(e.target.value)}
               />
-
-              <img src={Link} alt="Link" height="15" width="15" />
             </label>
             <p className="text-red-400 p-1">{errors[0]}</p>
           </div>
@@ -123,18 +127,35 @@ const UserInput = () => {
           </button>
         </div>
 
+        {url?.length === 0 && (
+          <div className="mt-10 w-full">
+            <NoDataFound />
+          </div>
+        )}
+        {apiError && (
+          <div className="w-full flex justify-center mt-5">
+            <p className="text-red-400">{apiError}</p>
+          </div>
+        )}
+
         <div className="grid lg:grid-cols-4 lg:gap-x-1 gap-y-6 mt-10 sm:grid-cols-1 md:grid-cols-2 w-11/12 mx-auto">
-          {url?.map((item) => {
-            return (
-              <Card
-                key={item?.id}
-                unique={item?.id}
-                handleDelete={() => handleDelete(item?.id)}
-                domainName={item?.domain}
-                color={item?.color}
-              />
-            );
-          })}
+          {responseLoader ? (
+            <div className="flex justify-center items-center w-full h-full col-span-4">
+              {loader()}
+            </div>
+          ) : (
+            url?.map((item) => {
+              return (
+                <Card
+                  key={item?.id}
+                  unique={item?.id}
+                  handleDelete={() => handleDelete(item?.id)}
+                  domainName={item?.domain}
+                  color={item?.color}
+                />
+              );
+            })
+          )}
         </div>
       </div>
     </>

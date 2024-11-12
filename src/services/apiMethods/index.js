@@ -1,4 +1,5 @@
 import axios from "axios";
+import { toast } from "react-toastify";
 
 const BASE_URL = import.meta.env.VITE_API_URL;
 
@@ -14,7 +15,8 @@ export const getAPI = (tag = "") => {
       }
     })
     .catch((e) => {
-      return console.log(e);
+      toast.error(e.message);
+      throw e;
     });
 };
 export const postAPI = (tag = "", reqBody) => {
@@ -28,7 +30,8 @@ export const postAPI = (tag = "", reqBody) => {
       return res;
     })
     .catch((e) => {
-      console.log(e);
+      toast.error(e.message);
+      throw e;
     });
 };
 
@@ -39,6 +42,7 @@ export const deleteAPI = (tag = "", reqBody = {}) => {
       return res;
     })
     .catch((e) => {
-      return console.log(e);
+      toast.error(e.message);
+      throw e;
     });
 };
